@@ -1,0 +1,32 @@
+android_app_import {
+	name: "Camera",
+	owner: "GrapheneOS",
+	apk: "Camera.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	privileged: true,
+	product_specific: true,
+	overrides: ["Aperture", "Camera2", "GCamGOPrebuilt", "GCamGOPrebuilt-V2", "Snap"],
+}
+
+android_app_import {
+	name: "AppStore",
+	owner: "GrapheneOS",
+	apk: "AppStore.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	privileged: true,
+	product_specific: true,
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-app.grapheneos.apps.xml",
+    src: "permissions/privapp-permissions-app.grapheneos.apps.xml",
+    sub_dir: "permissions",
+    product_specific: true,
+    filename_from_src: true,
+}
